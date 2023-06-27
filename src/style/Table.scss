@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+tr {
+  width: 100%;
+  text-align: center;
+}
+th {
+  font-size: 20px;
+  padding: 12px;
+}
+td {
+  padding: 10px;
+  padding-bottom: 12px;
+}
+thead,
+tbody > tr {
+  border-bottom: 2px solid #979797;
+}
+tbody > tr:hover {
+  background: rgb(244, 252, 251);
+}

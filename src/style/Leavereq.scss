@@ -1,0 +1,18 @@
+.reason-rwapper {
+  width: 100%;
+}
+.reason-rwapper textarea {
+  height: 150px;
+}
+textarea:focus {
+  outline: none;
+  padding: 10px 15px;
+}
+.btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.leave-btn:hover {
+  background: blueviolet;
+}

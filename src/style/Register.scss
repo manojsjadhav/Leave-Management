@@ -1,0 +1,120 @@
+.reg-container {
+  width: 55%;
+  background: rgb(241, 241, 241);
+  margin: 40px auto;
+  padding: 30px;
+  box-shadow: 1px 1px 10px rgb(90, 90, 90);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+label {
+  font-size: 18;
+  font-weight: 600;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-wrapper .btn {
+  margin: 30px 10px 0 0;
+  // display: block;
+}
+.bs {
+  box-shadow: 1px 1px 5px black;
+}
+.stu-btn {
+  background: rgb(202, 202, 202);
+  color: black;
+}
+.regi-input {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+.regi-input > input {
+  padding: 5px 7px;
+  font-size: 15px;
+  color: rgb(71, 71, 71);
+}
+.regi-input > input:focus {
+  outline: none;
+}
+.gender {
+  display: flex;
+  align-items: center;
+  margin-top: 17px;
+  // width: 47%;
+}
+.gender input {
+  width: 16px;
+  height: 16px;
+  margin-left: 20px;
+}
+.gender span {
+  margin-left: 3px;
+  color: rgb(54, 54, 54);
+  font-size: 15px;
+}
+.birth-day {
+  margin-top: 10px;
+  // width: 47%;
+}
+.birth-day input {
+  padding: 3px 10px;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.class,
+.rollnum {
+  // width: 47%;
+  margin-top: 10px;
+}
+.class > input,
+.rollnum > input {
+  width: 60%;
+  padding: 5px 7px;
+  font-size: 15px;
+  color: rgb(71, 71, 71);
+  margin-left: 15px;
+}
+.condition-checkbox {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.condition-checkbox p {
+  margin: 0 0 0 10px;
+}
+.condition-checkbox input {
+  width: 18px;
+  height: 18px;
+}
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.button-wrapper > button {
+  margin-left: 20px;
+}
+.button-wrapper > button:hover {
+  background: blueviolet;
+}
+.button-wrapper > p > a {
+  font-weight: 600;
+  color: rgb(35, 129, 218);
+  margin-left: 5px;
+}
+.button-wrapper > p > a:hover {
+  color: rgb(248, 90, 84);
+}
+.error {
+  color: red;
+  font-size: 15px;
+}

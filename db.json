@@ -1,0 +1,101 @@
+{
+  "user": [
+    {
+      "fullname": "manoj",
+      "email": "manoj@gmail.com",
+      "password": "112233",
+      "number": "9988774455",
+      "gender": "Male",
+      "qualification": "Msc",
+      "conditions": true,
+      "userType": "T",
+      "id": "48fb039a-2d80-4f1a-bed6-af7e910e4516"
+    },
+    {
+      "fullname": "msj",
+      "email": "msj@gmail.com",
+      "password": "112233",
+      "number": "9988774455",
+      "gender": "Male",
+      "qualification": "Msc",
+      "conditions": true,
+      "userType": "T",
+      "id": "0871c615-2807-4a14-9b36-60f25590612f"
+    },
+    {
+      "fullname": "hello",
+      "email": "hello@gmail.com",
+      "password": "112233",
+      "number": "9988774455",
+      "gender": "Male",
+      "birthdate": "2023-06-08",
+      "admissionNo": "222",
+      "class": "Msc-II",
+      "conditions": true,
+      "userType": "S",
+      "id": "f7ecf751-d515-4e04-a019-cd9bd9519ee5"
+    },
+    {
+      "fullname": "pavan",
+      "email": "pavan@gmail.com",
+      "password": "112233",
+      "number": "9988774455",
+      "gender": "Male",
+      "birthdate": "2023-06-07",
+      "admissionNo": "444",
+      "class": "BE-III",
+      "conditions": true,
+      "userType": "S",
+      "id": "8f92b18d-bd43-463a-8c47-756832f500ad"
+    },
+    {
+      "fullname": "sony",
+      "email": "sony@gmail.com",
+      "password": "112233",
+      "number": "9988774455",
+      "gender": "Female",
+      "birthdate": "2023-06-01",
+      "admissionNo": "123",
+      "class": "Bsc-II",
+      "conditions": true,
+      "userType": "S",
+      "id": "532d559c-8119-40c6-99cf-b99f9df1b0bf"
+    }
+  ],
+  "leaves": [
+    {
+      "fullname": "sony",
+      "admissionNo": "123",
+      "reason": "hello sir, my name is manoj jadhav",
+      "status": "Rejected",
+      "id": "532d559c-8119-40c6-99cf-b99f9df1b0bf"
+    },
+    {
+      "fullname": "hello",
+      "admissionNo": "222",
+      "startdate": "2023-06-02",
+      "enddate": "2023-06-03",
+      "reason": "for function",
+      "status": "Pending",
+      "id": "4ac10f03-50ab-4e40-a3f4-9c4eabffead7"
+    },
+    {
+      "fullname": "pavan",
+      "admissionNo": "444",
+      "startdate": "2023-06-01",
+      "enddate": "2023-06-02",
+      "reason": "for family issue",
+      "status": "Approved",
+      "id": "a727bc59-dd99-4213-bb18-9dbc3a38f702"
+    },
+    {
+      "fullname": "sony",
+      "admissionNo": "123",
+      "startdate": "2023-06-08",
+      "enddate": "2023-06-10",
+      "reason": "i am not well",
+      "status": "Pending",
+      "id": "7db00437-bc3e-42fa-8893-eef421601f1e"
+    }
+  ]
+}
