@@ -54,12 +54,12 @@
       "password": "112233",
       "number": "9988774455",
       "gender": "Female",
-      "birthdate": "2023-06-01",
-      "admissionNo": "123",
-      "class": "Bsc-II",
+      "birthdate": "2023-07-05",
+      "admissionNo": "122",
+      "class": "bca-III",
       "conditions": true,
       "userType": "S",
-      "id": "532d559c-8119-40c6-99cf-b99f9df1b0bf"
+      "id": "26a87ecd-9eee-4771-9c17-8ad143151ffc"
     }
   ],
   "leaves": [
@@ -96,6 +96,15 @@
       "reason": "i am not well",
       "status": "Pending",
       "id": "7db00437-bc3e-42fa-8893-eef421601f1e"
+    },
+    {
+      "fullname": "pavan",
+      "admissionNo": "444",
+      "startdate": "2023-07-04",
+      "enddate": "2023-07-06",
+      "reason": "hjfbsbrrg",
+      "status": "Approved",
+      "id": "c0d4c842-2ff6-4124-b2ef-46c30009e902"
     }
   ]
 }

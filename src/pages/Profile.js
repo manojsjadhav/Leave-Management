@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../style/Profile.scss";
-import { useSelector } from "react-redux";
-import { deleteUser } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteUser, getLocalStorData, getUserDetails } from "../redux/actions";
 import { useNavigate } from "react-router-dom";
 import { store } from "../context/Context";
 
@@ -9,6 +9,8 @@ const Profile = () => {
   const { userdata } = useSelector((state) => state.userDetail);
   const { setTeacherInitValue, setStudentInitValue } = useContext(store);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userid = getLocalStorData("userId");
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete your data")) {
       deleteUser(id);
@@ -25,6 +27,13 @@ const Profile = () => {
       navigate(`/updatestuprofile/${data.id}`);
     }
   };
+
+  useEffect(() => {
+    if (userid) {
+      dispatch(getUserDetails(userid));
+    }
+  }, []);
+
   return (
     <div className="userDetail-wrapper">
       <h1>Profile</h1>
