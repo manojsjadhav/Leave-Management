@@ -10,6 +10,7 @@ const LeaveReport = () => {
   console.log(userdata)
   useLayoutEffect(() => {
     dispatch(getLeaveRequest());
+    
   }, []);
   
   return (
