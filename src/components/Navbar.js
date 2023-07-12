@@ -20,7 +20,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     if (userid) {
-      dispatch(getUserDetails(userid));
+      // dispatch(getUserDetails(userid));
     }
     dispatch(getUsersData());
   }, []);

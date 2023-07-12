@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../style/Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { loginSchema } from "../schemas/schema";
-import { useSelector } from "react-redux";
-import { setLocalStorData } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsersData, setLocalStorData } from "../redux/actions";
 
 const Login = () => {
   const loginInitialvalue = {
     email: "",
     password: "",
   };
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { users } = useSelector((state) => state.users);
   const { values, handleBlur, handleChange, touched, handleSubmit, errors } =
@@ -31,7 +32,9 @@ const Login = () => {
         }
       },
     });
-
+  useEffect(() => {
+    dispatch(getUsersData());
+  }, []);
   return (
     <form className="login-cont" onSubmit={handleSubmit}>
       <h1 className="heading">Login</h1>

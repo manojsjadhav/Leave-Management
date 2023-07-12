@@ -37,7 +37,7 @@ const TeacherRegister = () => {
       onSubmit: (values, action) => {
         if (teacherInitValue.id) {
           updataUser(teacherInitValue.id, values);
-          navigate("/");
+          navigate("/profile");
         } else {
           postUserData({ ...values, id: uuidv4() });
           dispatch(getUsersData());

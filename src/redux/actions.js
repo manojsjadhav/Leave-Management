@@ -41,3 +41,8 @@ export const getLeaveRequest = createAsyncThunk("leaves", async () => {
 export const leaveAction = async (id, data) => {
   await axios.patch(`${url}/leaves/${id}`, data);
 };
+export const deleteLeaveReq = async (id) => {
+  const res = await axios.delete(`${url}/leaves/${id}`);
+  return res.status;
+  // console.log(res)
+};

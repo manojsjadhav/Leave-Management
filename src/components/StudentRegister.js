@@ -33,7 +33,7 @@ const StudentRegister = () => {
       onSubmit: (values, action) => {
         if (studentInitValue.id) {
           updataUser(studentInitValue.id, values);
-          navigate("/");
+          navigate("/profile");
         } else {
           postUserData({...values,id: uuidv4(),});
           dispatch(getUsersData());

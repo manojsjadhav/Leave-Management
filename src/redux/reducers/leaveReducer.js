@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { LEAVES, USERS } from "../types";
-import { getLeaveRequest, getUsersData } from "../actions";
+import { LEAVES } from "../types";
+import { getLeaveRequest } from "../actions";
 
 const initialState = {
   leaves: [],

@@ -64,19 +64,12 @@
   ],
   "leaves": [
     {
-      "fullname": "sony",
-      "admissionNo": "123",
-      "reason": "hello sir, my name is manoj jadhav",
-      "status": "Rejected",
-      "id": "532d559c-8119-40c6-99cf-b99f9df1b0bf"
-    },
-    {
       "fullname": "hello",
       "admissionNo": "222",
       "startdate": "2023-06-02",
       "enddate": "2023-06-03",
       "reason": "for function",
-      "status": "Pending",
+      "status": "Approved",
       "id": "4ac10f03-50ab-4e40-a3f4-9c4eabffead7"
     },
     {
@@ -94,7 +87,7 @@
       "startdate": "2023-06-08",
       "enddate": "2023-06-10",
       "reason": "i am not well",
-      "status": "Pending",
+      "status": "Rejected",
       "id": "7db00437-bc3e-42fa-8893-eef421601f1e"
     },
     {
