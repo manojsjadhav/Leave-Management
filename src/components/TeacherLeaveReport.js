@@ -27,7 +27,10 @@ const TeacherLeaveReport = () => {
     }
   };
   useEffect(() => {
-    dispatch(getLeaveRequest());
+    setTimeout(() => {
+      dispatch(getLeaveRequest());
+    }, 1000);
+    // dispatch(getLeaveRequest());
   }, [istoggle]);
   return (
     <div className="tea-leave-wrapper">

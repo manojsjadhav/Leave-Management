@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Teachers.scss";
 import "../style/Table.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,16 +7,26 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 
 const Students = () => {
+  // const [istoggle, setIsToggle] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { users, loading } = useSelector((state) => state.users);
   const filterData = users.filter((item) => item.userType === "S");
   const { userdata } = useSelector((state) => state.userDetail);
   const deleteStudent = (id) => {
     deleteUser(id);
-    dispatch(getUsersData());
-    navigate("/students");
+    filterData = filterData.filter((item) => item !== id);
+    // setTimeout(() => {
+    //   dispatch(getUsersData());
+    // }, 2000);
+    // setIsToggle(!istoggle)
+    // navigate("/students");
   };
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     dispatch(getUsersData());
+  //   }, 1000);
+  // }, [istoggle]);
   return (
     <>
       {loading ? (
