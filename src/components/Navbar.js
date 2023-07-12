@@ -15,7 +15,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const userid = getLocalStorData("userId");
   const handleLogout = () => {
-    localStorage.removeItem("userId");
+    sessionStorage.removeItem("userId");
     navigate("/");
   };
   useEffect(() => {
