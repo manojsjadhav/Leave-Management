@@ -5,10 +5,10 @@ import axios from "axios";
 const url = "https://leave-api.onrender.com";
 
 export const getLocalStorData = (key) => {
-  return localStorage.getItem(key);
+  return sessionStorage.getItem(key);
 };
 export const setLocalStorData = (key, data) => {
-  return JSON.stringify(localStorage.setItem(key, data));
+  return JSON.stringify(sessionStorage.setItem(key, data));
 };
 
 export const postUserData = async (data) => {
