@@ -1,37 +1,34 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React from "react";
 import "../style/LeaveReport.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheckCircle } from "react-icons/fa";
 import { deleteLeaveReq, getLeaveRequest, leaveAction } from "../redux/actions";
-import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import Loader from "./Loader";
 
 const TeacherLeaveReport = () => {
-  const [istoggle, setIsToggle] = useState(false);
   const dispatch = useDispatch();
   const { leaves, loading } = useSelector((state) => state.leaves);
-  console.log(loading);
   const handleApprov = (id) => {
     leaveAction(id, { status: "Approved" });
-    setIsToggle(!istoggle);
+    setTimeout(() => {
+      dispatch(getLeaveRequest());
+    }, 1000);
   };
   const handleReject = (id) => {
     leaveAction(id, { status: "Rejected" });
-    setIsToggle(!istoggle);
+    setTimeout(() => {
+      dispatch(getLeaveRequest());
+    }, 1000);
   };
   const deleteLeave = (id) => {
     if (window.confirm("Are you sure delete this leave request")) {
       deleteLeaveReq(id);
-      setIsToggle(!istoggle);
+      setTimeout(() => {
+        dispatch(getLeaveRequest());
+      }, 1000);
     }
   };
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch(getLeaveRequest());
-    }, 1000);
-    // dispatch(getLeaveRequest());
-  }, [istoggle]);
   return (
     <div className="tea-leave-wrapper">
       {loading ? (

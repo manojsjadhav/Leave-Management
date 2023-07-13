@@ -1,32 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../style/Teachers.scss";
 import "../style/Table.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, getUsersData } from "../redux/actions";
-import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 
 const Students = () => {
-  // const [istoggle, setIsToggle] = useState(false);
-  const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  const { users, loading } = useSelector((state) => state.users);
-  const filterData = users.filter((item) => item.userType === "S");
   const { userdata } = useSelector((state) => state.userDetail);
+  const { users, loading } = useSelector((state) => state.users);
+  const filData = users.filter((item) => item.userType === "S");
+  const dispatch = useDispatch();
+
   const deleteStudent = (id) => {
-    deleteUser(id);
-    filterData = filterData.filter((item) => item !== id);
-    // setTimeout(() => {
-    //   dispatch(getUsersData());
-    // }, 2000);
-    // setIsToggle(!istoggle)
-    // navigate("/students");
+    if (window.confirm("Are you sure delete this student")) {
+      deleteUser(id);
+      setTimeout(() => {
+        dispatch(getUsersData());
+      }, 1000);
+    }
   };
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(getUsersData());
-  //   }, 1000);
-  // }, [istoggle]);
   return (
     <>
       {loading ? (
@@ -54,7 +46,7 @@ const Students = () => {
               </tr>
             </thead>
             <tbody>
-              {filterData?.map((item, i) => {
+              {filData?.map((item, i) => {
                 return (
                   <tr key={item.id}>
                     <td>{i + 1}</td>

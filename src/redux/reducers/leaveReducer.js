@@ -27,5 +27,4 @@ const leaveSlice = createSlice({
   },
 });
 
-// export const { addItem, removeItem } = usersSlice.actions;
 export default leaveSlice.reducer;
