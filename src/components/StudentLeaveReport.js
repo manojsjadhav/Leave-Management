@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import "../style/Teachers.scss";
 import "../style/Table.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getLeaveRequest } from "../redux/actions";
 
 const StudentLeaveReport = () => {
+  const dispatch = useDispatch()
   const { leaves } = useSelector((state) => state.leaves);
-  console.log(leaves);
-
+  useEffect(() => {
+    dispatch(getLeaveRequest());
+  }, []);
   return (
     <div className="t-data">
       <div>
