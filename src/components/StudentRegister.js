@@ -39,7 +39,7 @@ const StudentRegister = () => {
       onSubmit: async (values, action) => {
         if (studentInitValue.id) {
           await updataUser(studentInitValue.id, values);
-          dispatch(getUserDetails(userid));
+          await dispatch(getUserDetails(userid));
           navigate("/profile");
         } else {
           await postUserData({ ...values, id: uuidv4() });
