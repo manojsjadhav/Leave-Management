@@ -30,13 +30,13 @@ const StudentRegister = () => {
     useFormik({
       initialValues: studentInitValue,
       validationSchema: stuSignUpSchema,
-      onSubmit: (values, action) => {
+      onSubmit: async(values, action) => {
         if (studentInitValue.id) {
           updataUser(studentInitValue.id, values);
           navigate("/profile");
         } else {
-          postUserData({...values,id: uuidv4(),});
-          dispatch(getUsersData());
+          await postUserData({...values,id: uuidv4(),});
+          await dispatch(getUsersData());
           navigate("/login");
         }
         action.resetForm();

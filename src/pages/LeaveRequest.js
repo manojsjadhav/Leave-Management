@@ -2,8 +2,8 @@ import { useFormik } from "formik";
 import React from "react";
 import "../style/Leavereq.scss";
 import { v4 as uuidv4 } from "uuid";
-import { useSelector } from "react-redux";
-import { postLeaveRequest } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { getLeaveRequest, postLeaveRequest } from "../redux/actions";
 import { useNavigate } from "react-router-dom";
 import TeaLeavePage from "../components/TeaLeavePage";
 
@@ -17,19 +17,21 @@ const LeaveRequest = () => {
     status: "Pending",
   };
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
   const { userdata } = useSelector((state) => state.userDetail);
   const stuFilter = users?.filter((item) => item.userType === "S");
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: leaveInitValue,
-    onSubmit: (values, action) => {
+    onSubmit: async(values, action) => {
       const userFind = stuFilter.find(
         (item) =>
           item.fullname === values.fullname &&
           item.admissionNo === values.admissionNo
       );
       if (userFind && values.startdate !== "" && values.enddate !== "") {
-        postLeaveRequest({ ...values, id: uuidv4() });
+        await postLeaveRequest({ ...values, id: uuidv4() });
+        await dispatch(getLeaveRequest());
         action.resetForm();
         navigate("/leavereport");
       } else {
