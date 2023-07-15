@@ -9,24 +9,18 @@ import Loader from "./Loader";
 const TeacherLeaveReport = () => {
   const dispatch = useDispatch();
   const { leaves, loading } = useSelector((state) => state.leaves);
-  const handleApprov = (id) => {
-    leaveAction(id, { status: "Approved" });
-    setTimeout(() => {
-      dispatch(getLeaveRequest());
-    }, 1000);
+  const handleApprov = async (id) => {
+    await leaveAction(id, { status: "Approved" });
+    await dispatch(getLeaveRequest());
   };
-  const handleReject = (id) => {
-    leaveAction(id, { status: "Rejected" });
-    setTimeout(() => {
-      dispatch(getLeaveRequest());
-    }, 1000);
+  const handleReject = async (id) => {
+    await leaveAction(id, { status: "Rejected" });
+    await dispatch(getLeaveRequest());
   };
-  const deleteLeave = (id) => {
+  const deleteLeave = async (id) => {
     if (window.confirm("Are you sure delete this leave request")) {
-      deleteLeaveReq(id);
-      setTimeout(() => {
-        dispatch(getLeaveRequest());
-      }, 1000);
+      await deleteLeaveReq(id);
+      await dispatch(getLeaveRequest());
     }
   };
   return (

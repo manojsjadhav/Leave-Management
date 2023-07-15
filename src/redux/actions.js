@@ -44,5 +44,4 @@ export const leaveAction = async (id, data) => {
 export const deleteLeaveReq = async (id) => {
   const res = await axios.delete(`${url}/leaves/${id}`);
   return res.status;
-  // console.log(res)
 };

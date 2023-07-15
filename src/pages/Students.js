@@ -11,12 +11,10 @@ const Students = () => {
   const filData = users.filter((item) => item.userType === "S");
   const dispatch = useDispatch();
 
-  const deleteStudent = (id) => {
+  const deleteStudent = async(id) => {
     if (window.confirm("Are you sure delete this student")) {
-      deleteUser(id);
-      setTimeout(() => {
-        dispatch(getUsersData());
-      }, 1000);
+      await deleteUser(id); 
+      await  dispatch(getUsersData());
     }
   };
   return (
