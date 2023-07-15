@@ -15,7 +15,7 @@ const Profile = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete your data")) {
       deleteUser(id);
-      localStorage.removeItem("userId");
+      sessionStorage.removeItem("userId");
       navigate("/");
     }
   };
