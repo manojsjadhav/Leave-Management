@@ -7,6 +7,7 @@ import { teaSignUpSchema } from "../schemas/schema";
 import { store } from "../context/Context";
 import {
   getLocalStorData,
+  getUserDetails,
   getUsersData,
   postUserData,
   updataUser,
@@ -36,7 +37,8 @@ const TeacherRegister = () => {
       validationSchema: teaSignUpSchema,
       onSubmit: async(values, action) => {
         if (teacherInitValue.id) {
-          updataUser(teacherInitValue.id, values);
+          await updataUser(teacherInitValue.id, values);
+          await dispatch(getUserDetails(userid));
           navigate("/profile");
         } else {
           await postUserData({ ...values, id: uuidv4() });

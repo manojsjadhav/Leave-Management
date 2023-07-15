@@ -4,7 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { stuSignUpSchema } from "../schemas/schema";
 import { store } from "../context/Context";
-import { getLocalStorData, getUsersData, postUserData, updataUser } from "../redux/actions";
+import {
+  getLocalStorData,
+  getUserDetails,
+  getUsersData,
+  postUserData,
+  updataUser,
+} from "../redux/actions";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 
@@ -30,12 +36,13 @@ const StudentRegister = () => {
     useFormik({
       initialValues: studentInitValue,
       validationSchema: stuSignUpSchema,
-      onSubmit: async(values, action) => {
+      onSubmit: async (values, action) => {
         if (studentInitValue.id) {
-          updataUser(studentInitValue.id, values);
+          await updataUser(studentInitValue.id, values);
+          dispatch(getUserDetails(userid));
           navigate("/profile");
         } else {
-          await postUserData({...values,id: uuidv4(),});
+          await postUserData({ ...values, id: uuidv4() });
           await dispatch(getUsersData());
           navigate("/login");
         }
